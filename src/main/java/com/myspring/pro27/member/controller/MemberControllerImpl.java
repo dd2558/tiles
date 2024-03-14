@@ -118,6 +118,21 @@ public class MemberControllerImpl   implements MemberController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/board" ,method = RequestMethod.GET)
+	public ModelAndView requestBoard(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String viewName = getViewName(request);
+		ModelAndView mav = new ModelAndView(viewName);
+		return mav;
+	}
+
+	@RequestMapping(value="/product" ,method = RequestMethod.GET)
+	public ModelAndView requestProduct(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String viewName = getViewName(request);
+		ModelAndView mav = new ModelAndView(viewName);
+		return mav;
+	}
+	
+	
 
 	private String getViewName(HttpServletRequest request) throws Exception {
 		String contextPath = request.getContextPath();
@@ -149,6 +164,7 @@ public class MemberControllerImpl   implements MemberController {
 		}
 		return viewName;
 	}
+	
 
 
 }
